@@ -17,7 +17,7 @@ public class GedApplication implements CommandLineRunner {
         SpringApplication.run(GedApplication.class, args);
     }
 
-    @Override
+    @Override 
     public void run(String... args) throws Exception {
         utilisateurService.addUser(new Utilisateur(null, "afaf", "benidal"));
     }
