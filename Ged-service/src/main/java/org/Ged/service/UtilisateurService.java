@@ -4,5 +4,5 @@ import org.Ged.model.Utilisateur;
 
 public interface UtilisateurService {
 
-	Utilisateur saveOrUpdate (Utilisateur utilisateur);
+	Utilisateur saveOrUpdate(Utilisateur utilisateur);
 }

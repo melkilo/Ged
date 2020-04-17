@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UtilisateurServiceImpl implements UtilisateurService {
 
 	@Autowired
-	UtilisateurRepository  utilisateurRepository;
-	
+	UtilisateurRepository utilisateurRepository;
+
 	@Transactional
 	@Override
 	public Utilisateur saveOrUpdate(Utilisateur utilisateur) {
