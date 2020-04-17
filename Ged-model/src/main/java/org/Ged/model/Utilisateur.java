@@ -27,4 +27,9 @@ public class Utilisateur implements Serializable {
     private Long id;
     private String nom;
     private String prenom;
+	public Utilisateur(String nom, String prenom) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+	}
 }

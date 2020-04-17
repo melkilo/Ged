@@ -36,7 +36,7 @@ public class GedStarter  implements CommandLineRunner  {
 
 	public void run(String... args) throws Exception {
 		System.out.print("test before start ");
-		utilisateurService.saveOrUpdate(new Utilisateur(null, "amiiiine ", "1KG"));
+		utilisateurService.saveOrUpdate(new Utilisateur("amin", "elkilo"));
 		// user.save(new Utilisateur(null, "afaf2", "been"));
 		System.out.print("test before start ");
 	}

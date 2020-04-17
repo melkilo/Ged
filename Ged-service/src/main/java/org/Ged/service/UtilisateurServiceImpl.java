@@ -15,7 +15,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Transactional
 	@Override
 	public Utilisateur saveOrUpdate(Utilisateur utilisateur) {
-		
 		return utilisateurRepository.save(utilisateur);
 	}
 
