@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net 
+      http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping map-id="MAPPING_CLIENT" wildcard="false">
+		<class-a>org.Ged.model.Client</class-a>
+		<class-b>org.Ged.dto.ClientDto</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>nom</a>
+			<b>name</b>
+		</field>
+		<field>
+			<a>prenom</a>
+			<b>prenom</b>
+		</field>
+	</mapping>
+</mappings>

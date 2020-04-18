@@ -1,7 +1,9 @@
-package org.Ged.service;
+package org.Ged.orchestration;
 
 import org.Ged.dao.ClientRepository;
+import org.Ged.dto.ClientDto;
 import org.Ged.model.Client;
+import org.Ged.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,18 +25,18 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class GedStarter  implements CommandLineRunner  {
 
 	@Autowired(required = true)
-	private ClientService clientService;
+	private ClientServiceSilo clientServiceSilo;
 
 
 
 	public static void main(String[] args)  {
-		System.out.println(" **** SERVICE LAYER" + Client.class);
 		SpringApplication.run(GedStarter.class, args);
 	}
 
 	public void run(String... args) throws Exception {
-		System.out.print("test before start ");
-		clientService.saveOrUpdate(new Client("vv", "vv"));
-		System.out.print("test before start ");
+		System.out.print("<< test before start orch ");
+		ClientDto clientDto=clientServiceSilo.saveClient(new Client("test", "test"));
+		System.out.println(clientDto);
+		System.out.print("<<< test after start  orxh");
 	}
 }

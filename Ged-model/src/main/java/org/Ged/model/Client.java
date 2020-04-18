@@ -19,7 +19,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Utilisateur implements Serializable {
+public class Client implements Serializable {
 
 	private static final long serialVersionUID = 3403269617772576482L;
 	@Id
@@ -28,7 +28,7 @@ public class Utilisateur implements Serializable {
 	private String nom;
 	private String prenom;
 
-	public Utilisateur(String nom, String prenom) {
+	public Client(String nom, String prenom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
