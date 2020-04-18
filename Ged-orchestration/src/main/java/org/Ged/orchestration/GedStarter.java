@@ -4,12 +4,15 @@ import org.Ged.dao.ClientRepository;
 import org.Ged.dto.ClientDto;
 import org.Ged.model.Client;
 import org.Ged.service.ClientService;
+import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
@@ -27,16 +30,23 @@ public class GedStarter  implements CommandLineRunner  {
 	@Autowired(required = true)
 	private ClientServiceSilo clientServiceSilo;
 
-
+	@Bean
+	public Mapper mapper() {
+	    return new DozerBeanMapper();
+	}
 
 	public static void main(String[] args)  {
 		SpringApplication.run(GedStarter.class, args);
 	}
 
 	public void run(String... args) throws Exception {
+		
 		System.out.print("<< test before start orch ");
-		ClientDto clientDto=clientServiceSilo.saveClient(new Client("test", "test"));
-		System.out.println(clientDto);
+		DozerBeanMapper mapper= new DozerBeanMapper();
+		Client client=new Client("cc", "cc");
+		ClientDto clientDto= mapper.map(client, ClientDto.class);
+		clientDto=clientServiceSilo.saveClient(clientDto);
+		System.out.println(clientDto.getNom()+" " +clientDto.getPrenom());
 		System.out.print("<<< test after start  orxh");
 	}
 }
