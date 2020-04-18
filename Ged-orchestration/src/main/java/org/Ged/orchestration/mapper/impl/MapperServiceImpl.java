@@ -23,7 +23,7 @@ public class MapperServiceImpl implements MapperService{
 	/* ========================== VARIABLES ========================== */
 	/* =============================================================== */
 
-	@Autowired(required=true)
+	@Autowired
 	private Mapper mapper;
 
 	/* =============================================================== */

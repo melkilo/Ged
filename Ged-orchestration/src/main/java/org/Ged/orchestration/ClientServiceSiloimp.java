@@ -17,6 +17,7 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	ClientService clientService;
 	@Autowired
 	MapperService mapperService;
+	
 	private static final String MAPPING_CLIENT = "MAPPING_CLIENT";
 	//DozerBeanMapper mapper= new DozerBeanMapper() ;
 
@@ -31,6 +32,8 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	@Override
 	public List<ClientDto> findAllClients() {
 		List<Client> client = clientService.getAllClients();
+		String t="t";
+		t.toString();
 		return  mapperService.mapList(client, ClientDto.class,MAPPING_CLIENT);
 	}
 
