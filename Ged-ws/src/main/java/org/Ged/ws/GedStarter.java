@@ -1,8 +1,11 @@
-package org.Ged.orchestration;
+package org.Ged.ws;
+
+import java.util.List;
 
 import org.Ged.dao.ClientRepository;
 import org.Ged.dto.ClientDto;
 import org.Ged.model.Client;
+import org.Ged.orchestration.ClientServiceSilo;
 import org.Ged.service.ClientService;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
@@ -30,10 +33,6 @@ public class GedStarter  implements CommandLineRunner  {
 	@Autowired(required = true)
 	private ClientServiceSilo clientServiceSilo;
 
-	@Bean
-	public Mapper mapper() {
-	    return new DozerBeanMapper();
-	}
 
 	public static void main(String[] args)  {
 		SpringApplication.run(GedStarter.class, args);
@@ -43,10 +42,15 @@ public class GedStarter  implements CommandLineRunner  {
 		
 		System.out.print("<< test before start orch ");
 		DozerBeanMapper mapper= new DozerBeanMapper();
-		Client client=new Client("cc", "cc");
+		System.out.println(" <<<<<<<<<<<<  "+mapper.getMappingFiles());
+		Client client=new Client("dernier", "dernier");
 		ClientDto clientDto= mapper.map(client, ClientDto.class);
 		clientDto=clientServiceSilo.saveClient(clientDto);
 		System.out.println(clientDto.getNom()+" " +clientDto.getPrenom());
+		List<ClientDto> listClient= clientServiceSilo.findAllClients();		
+		for (ClientDto clientDtoo : listClient) {
+			System.out.println(clientDtoo.getNom());
+		}
 		System.out.print("<<< test after start  orxh");
 	}
 }
