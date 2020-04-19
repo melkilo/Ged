@@ -36,15 +36,7 @@ public class ClientDto {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public ClientDto() {
-		super();
-	}
 
-	public ClientDto(Long id, String nom, String prenom) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-	}
+
 
 }

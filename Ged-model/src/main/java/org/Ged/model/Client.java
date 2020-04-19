@@ -16,8 +16,6 @@ import lombok.ToString;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Client implements Serializable {
 
