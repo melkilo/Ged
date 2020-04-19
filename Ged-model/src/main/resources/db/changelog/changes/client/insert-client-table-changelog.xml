@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="melkilo" id="2" dbms="mysql,h2">
+		<insert tableName="client">
+			<column name="id" valueNumeric="3" />
+			<column name="nom" value="Tom" />
+			<column name="prenom" value="USA" />
+		</insert>
+	</changeSet>
+	
+	<changeSet author="melkilo" id="insert_client_to_db" dbms="mysql,h2">
+		<insert tableName="client">
+			<column name="id" valueNumeric="4" />
+			<column name="nom" value="TEST" />
+			<column name="prenom" value="TEST" />
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>
