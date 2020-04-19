@@ -4,10 +4,9 @@ import java.util.List;
 
 import org.Ged.dto.ClientDto;
 import org.Ged.model.Client;
+
 import org.Ged.orchestration.mapper.service.MapperService;
 import org.Ged.service.ClientService;
-import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,6 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	MapperService mapperService;
 	
 	private static final String MAPPING_CLIENT = "MAPPING_CLIENT";
-	//DozerBeanMapper mapper= new DozerBeanMapper() ;
 
 	@Override
 	public ClientDto saveClient(ClientDto c) {
