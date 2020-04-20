@@ -4,17 +4,17 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-	<changeSet author="melkilo" id="2" dbms="mysql,h2">
+	<changeSet author="melkilo" id="insert_client1_to_db" dbms="mysql,h2">
 		<insert tableName="client">
-			<column name="id" valueNumeric="3" />
-			<column name="nom" value="Tom" />
-			<column name="prenom" value="USA" />
+			<column name="id" valueNumeric="1" />
+			<column name="nom" value="afaf" />
+			<column name="prenom" value="ben" />
 		</insert>
 	</changeSet>
 	
-	<changeSet author="melkilo" id="insert_client_to_db" dbms="mysql,h2">
+	<changeSet author="melkilo" id="insert_client2_to_db" dbms="mysql,h2">
 		<insert tableName="client">
-			<column name="id" valueNumeric="4" />
+			<column name="id" valueNumeric="2" />
 			<column name="nom" value="TEST" />
 			<column name="prenom" value="TEST" />
 		</insert>

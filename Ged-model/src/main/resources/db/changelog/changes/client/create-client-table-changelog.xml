@@ -3,7 +3,7 @@
 	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-	<changeSet author="melkilo" id="1" dbms="mysql,h2">
+	<changeSet author="melkilo" id="createTableClient" dbms="mysql,h2">
 		<createTable tableName="client">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints primaryKey="true" />
@@ -17,14 +17,6 @@
 		<rollback>
 			<dropTable tableName="person" />
 		</rollback>
-	</changeSet>
-
-	<changeSet author="melkilo" id="2" dbms="mysql,h2">
-		<insert tableName="client">
-			<column name="id" valueNumeric="2" />
-			<column name="nom" value="Tom" />
-			<column name="prenom" value="USA" />
-		</insert>
 	</changeSet>
 
 </databaseChangeLog>
