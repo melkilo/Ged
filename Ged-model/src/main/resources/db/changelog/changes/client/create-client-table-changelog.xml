@@ -15,7 +15,7 @@
 		</createTable>
 
 		<rollback>
-			<dropTable tableName="person" />
+			<dropTable tableName="client" />
 		</rollback>
 	</changeSet>
 
