@@ -9,6 +9,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClientDto {
 
+	public ClientDto() {
+		super();
+	}
+
+	public ClientDto(String nom, String prenom) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+	}
+
+	public ClientDto(Long id, String nom, String prenom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+	}
+
 	private Long id;
 	private String nom;
 	private String prenom;
