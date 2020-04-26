@@ -26,7 +26,6 @@ public class ClientApi {
 	@PostMapping("/addClient")
 	public ClientDto addClients(@RequestBody ClientDto cl) {
 		System.out.print(cl.getNom()+" "+cl.getPrenom()+" "+cl.getId());
-		if(cl.getId()==null) cl.setId(5L);
 		return clientServiceSilo.saveClient(cl);
 	}
 
