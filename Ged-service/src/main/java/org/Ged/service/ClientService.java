@@ -6,7 +6,11 @@ import org.Ged.model.Client;
 
 public interface ClientService {
 
-	Client saveOrUpdate(Client utilisateur);
+	Client saveClient(Client client);
 
 	List<Client> getAllClients();
+
+	void deleteClient(Long id);
+
+	Client updateClient(Client client);
 }
