@@ -16,23 +16,34 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	ClientService clientService;
 	@Autowired
 	MapperService mapperService;
-	
+
 	private static final String MAPPING_CLIENT = "MAPPING_CLIENT";
 
 	@Override
 	public ClientDto saveClient(ClientDto c) {
-		Client clientt=mapperService.map(c, Client.class);
-		Client client = clientService.saveOrUpdate(clientt);
+		Client clientDao = mapperService.map(c, Client.class);
+		Client client = clientService.saveClient(clientDao);
 		return mapperService.map(client, ClientDto.class);
 	}
-
 
 	@Override
 	public List<ClientDto> findAllClients() {
 		List<Client> client = clientService.getAllClients();
-		String t="t";
+		String t = "t";
 		t.toString();
-		return  mapperService.mapList(client, ClientDto.class,MAPPING_CLIENT);
+		return mapperService.mapList(client, ClientDto.class, MAPPING_CLIENT);
+	}
+
+	@Override
+	public void deleteClient(Long id) {
+		clientService.deleteClient(id);
+	}
+	
+	@Override
+	public ClientDto updateClient(ClientDto c) {
+		Client clientDao = mapperService.map(c, Client.class);
+		Client client = clientService.updateClient(clientDao);
+		return mapperService.map(client, ClientDto.class);
 	}
 
 }
