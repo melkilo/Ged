@@ -15,14 +15,15 @@ import org.springframework.core.io.Resource;
 public class DozerConfg {
 
 	@Bean
-	public Mapper mapper(@Value(value = "classpath:mappings/**/*mappings.xml") Resource[] resourceArray) throws IOException {
-	    List<String> mappingFileUrlList = new ArrayList<>();
-	    for (Resource resource : resourceArray) {
-	        mappingFileUrlList.add(String.valueOf(resource.getURL()));
-	    }
-	    DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
-	    dozerBeanMapper.setMappingFiles(mappingFileUrlList);
-	    return dozerBeanMapper;
+	public Mapper mapper(@Value(value = "classpath:mappings/**/*mappings.xml") Resource[] resourceArray)
+			throws IOException {
+		List<String> mappingFileUrlList = new ArrayList<>();
+		for (Resource resource : resourceArray) {
+			mappingFileUrlList.add(String.valueOf(resource.getURL()));
+		}
+		DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
+		dozerBeanMapper.setMappingFiles(mappingFileUrlList);
+		return dozerBeanMapper;
 	}
-	
+
 }

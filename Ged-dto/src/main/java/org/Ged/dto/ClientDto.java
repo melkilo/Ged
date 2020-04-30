@@ -54,6 +54,4 @@ public class ClientDto {
 		this.prenom = prenom;
 	}
 
-
-
 }

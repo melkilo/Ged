@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 //import ma.cr.courrier.base.contrat.Transformable;
 @Service
 @Lazy(false)
-public class MapperServiceImpl implements MapperService{
+public class MapperServiceImpl implements MapperService {
 
 	/* =============================================================== */
 	/* ========================== VARIABLES ========================== */
@@ -33,9 +33,12 @@ public class MapperServiceImpl implements MapperService{
 	/**
 	 * Map a source object to a destination object function
 	 * 
-	 * @param source the source object
-	 * @param destination the destination object
-	 * @param mapId the mapping reference
+	 * @param source
+	 *            the source object
+	 * @param destination
+	 *            the destination object
+	 * @param mapId
+	 *            the mapping reference
 	 */
 	@Override
 	public void map(Object source, Object destination, String mapId) {
@@ -45,9 +48,12 @@ public class MapperServiceImpl implements MapperService{
 	/**
 	 * Map a source object to a destination object generic function
 	 * 
-	 * @param source the source object
-	 * @param destinationClass the destination object's class type
-	 * @param mapId the mapping reference
+	 * @param source
+	 *            the source object
+	 * @param destinationClass
+	 *            the destination object's class type
+	 * @param mapId
+	 *            the mapping reference
 	 */
 	@Override
 	public <T> T map(Object source, Class<T> destinationClass, String mapId) {
@@ -55,10 +61,13 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source object to a destination object generic function without a mapping reference
+	 * Map a source object to a destination object generic function without a
+	 * mapping reference
 	 * 
-	 * @param source the source object
-	 * @param destinationClass the destination object's class type
+	 * @param source
+	 *            the source object
+	 * @param destinationClass
+	 *            the destination object's class type
 	 */
 	@Override
 	public <T> T map(Object source, Class<T> destinationClass) {
@@ -66,10 +75,13 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source object to a destination object function without a mapping reference
+	 * Map a source object to a destination object function without a mapping
+	 * reference
 	 * 
-	 * @param source the source object
-	 * @param destination the destination object
+	 * @param source
+	 *            the source object
+	 * @param destination
+	 *            the destination object
 	 */
 	@Override
 	public void map(Object source, Object destination) {
@@ -77,11 +89,13 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source collection of objects to a destination collection of objects generic function without a mapping
-	 * reference
+	 * Map a source collection of objects to a destination collection of objects
+	 * generic function without a mapping reference
 	 * 
-	 * @param source the source object's collection
-	 * @param destinationClass the destination object's class type
+	 * @param source
+	 *            the source object's collection
+	 * @param destinationClass
+	 *            the destination object's class type
 	 */
 	@Override
 	public <U, T> Collection<T> mapCollection(Collection<U> source, Class<T> destinationClass) {
@@ -96,12 +110,15 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source collection of objects to a destination collection of objects generic function without a mapping
-	 * reference
+	 * Map a source collection of objects to a destination collection of objects
+	 * generic function without a mapping reference
 	 * 
-	 * @param source the source object's collection
-	 * @param destination the destination object's collection
-	 * @param destinationClass the destination object's class type
+	 * @param source
+	 *            the source object's collection
+	 * @param destination
+	 *            the destination object's collection
+	 * @param destinationClass
+	 *            the destination object's class type
 	 */
 	@Override
 	public <U, T> void mapCollection(Collection<U> source, Collection<T> destination, Class<T> destinationClass) {
@@ -113,11 +130,15 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source collection of objects to a destination collection of objects generic function
+	 * Map a source collection of objects to a destination collection of objects
+	 * generic function
 	 * 
-	 * @param source the source object's collection
-	 * @param destinationClass the destination object's class type
-	 * @param mapId the mapping reference
+	 * @param source
+	 *            the source object's collection
+	 * @param destinationClass
+	 *            the destination object's class type
+	 * @param mapId
+	 *            the mapping reference
 	 */
 	@Override
 	public <U, T> Collection<T> mapCollection(Collection<U> source, Class<T> destinationClass, String mapId) {
@@ -132,17 +153,20 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source collection of objects to a destination collection of objects generic function
+	 * Map a source collection of objects to a destination collection of objects
+	 * generic function
 	 * 
-	 * @param source the source object's collection
-	 * @param destination the destination object's collection
-	 * @param destinationClass the destination object's class type
-	 * @param mapId the mapping reference
+	 * @param source
+	 *            the source object's collection
+	 * @param destination
+	 *            the destination object's collection
+	 * @param destinationClass
+	 *            the destination object's class type
+	 * @param mapId
+	 *            the mapping reference
 	 */
 	@Override
-	public <U, T> void mapCollection(Collection<U> source,
-			Collection<T> destination,
-			Class<T> destinationClass,
+	public <U, T> void mapCollection(Collection<U> source, Collection<T> destination, Class<T> destinationClass,
 			String mapId) {
 		if (source != null && !source.isEmpty()) {
 			for (U o : source) {
@@ -176,31 +200,35 @@ public class MapperServiceImpl implements MapperService{
 	}
 
 	/**
-	 * Map a source collection of objects to a destination collection of objects generic function with parameters
+	 * Map a source collection of objects to a destination collection of objects
+	 * generic function with parameters
 	 * 
-	 * @param source the source object's collection
-	 * @param destinationClass the destination object's class type
-	 * @param mapId the mapping reference
-	 * @param params the parameters
+	 * @param source
+	 *            the source object's collection
+	 * @param destinationClass
+	 *            the destination object's class type
+	 * @param mapId
+	 *            the mapping reference
+	 * @param params
+	 *            the parameters
 	 */
-//	@Override
-//	public <U, T> Collection<T> mapCollection(Collection<U> source,
-//			Class<T> destinationClass,
-//			String mapId,
-//			Map<String, Object> params) {
-//		Collection<T> destination = Collections.emptyList();
-//		if (source != null && !source.isEmpty()) {
-//			destination = new ArrayList<>(source.size());
-//			for (U o : source) {
-//				T d = map(o, destinationClass, mapId);
-//				if (d instanceof Transformable) {
-//					((Transformable) d).computeTransformation(params);
-//				}
-//				destination.add(d);
-//			}
-//		}
-//		return destination;
-//	}
-
+	// @Override
+	// public <U, T> Collection<T> mapCollection(Collection<U> source,
+	// Class<T> destinationClass,
+	// String mapId,
+	// Map<String, Object> params) {
+	// Collection<T> destination = Collections.emptyList();
+	// if (source != null && !source.isEmpty()) {
+	// destination = new ArrayList<>(source.size());
+	// for (U o : source) {
+	// T d = map(o, destinationClass, mapId);
+	// if (d instanceof Transformable) {
+	// ((Transformable) d).computeTransformation(params);
+	// }
+	// destination.add(d);
+	// }
+	// }
+	// return destination;
+	// }
 
 }

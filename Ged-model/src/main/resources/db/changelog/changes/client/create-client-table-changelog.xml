@@ -5,11 +5,11 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 	<changeSet author="melkilo" id="createTableClient" dbms="mysql,h2">
 		<createTable tableName="client">
-<!-- 			<preConditions onFail="MARK_RAN"> -->
-<!-- 				<not> -->
-<!-- 					<columnExists tableName="AGGR_C_INSTR" columnName="FI_DATA_CFIVALUE" /> -->
-<!-- 				</not> -->
-<!-- 			</preConditions> -->
+			<!-- <preConditions onFail="MARK_RAN"> -->
+			<!-- <not> -->
+			<!-- <columnExists tableName="AGGR_C_INSTR" columnName="FI_DATA_CFIVALUE" /> -->
+			<!-- </not> -->
+			<!-- </preConditions> -->
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints primaryKey="true" />
 			</column>

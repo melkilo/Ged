@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableAutoConfiguration
-@EnableJpaRepositories(basePackages={"basepackage.data"})
-@EntityScan(basePackageClasses=User.class)
-@ComponentScan(basePackages={"basepackage"})
+@EnableJpaRepositories(basePackages = { "basepackage.data" })
+@EntityScan(basePackageClasses = User.class)
+@ComponentScan(basePackages = { "basepackage" })
 public class GedConfig {
 
 }

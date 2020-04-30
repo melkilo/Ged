@@ -32,7 +32,7 @@ public class ClientServiceImpl implements ClientService {
 	public void deleteClient(Long id) {
 		utilisateurRepository.deleteById(id);
 	}
-	
+
 	@Transactional
 	@Override
 	public Client updateClient(Client client) {
