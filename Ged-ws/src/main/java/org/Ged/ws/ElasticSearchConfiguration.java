@@ -26,12 +26,13 @@ public class ElasticSearchConfiguration extends ElasticsearchConfigurationSuppor
 	@Value("${elasticsearch.port}")
 	private int elasticsearchPort;
 
-	@Value("${elasticsearch.cluster.name:elasticsearch}")
+	@Value("${elasticsearch.clustername}")
 	private String clusterName;
-
+	
 	@Bean
 	public Client elasticsearchClient() throws Exception {
 		Settings elasticsearchSettings = Settings.builder().put("client.transport.sniff", true)
+				.put("cluster.name", clusterName)
 				.build();
 		TransportClient client = new PreBuiltTransportClient(elasticsearchSettings);
 		
