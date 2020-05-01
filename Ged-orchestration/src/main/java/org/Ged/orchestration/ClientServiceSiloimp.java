@@ -41,7 +41,7 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 
 	@Override
 	public Page<ClientDto> search() {
-		Pageable pageable  = PageRequest.of(0, 2);
+		Pageable pageable  = PageRequest.of(0, 10);
 
 		return clientSearchRepository.findAll(pageable);
 

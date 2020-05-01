@@ -38,7 +38,7 @@ public class ElasticSearchConfiguration extends ElasticsearchConfigurationSuppor
 		client.addTransportAddress(new TransportAddress(InetAddress.getByName(elasticsearchHome), elasticsearchPort));
 		return client;
 	}
-// 
+ 
     @Bean
     public ElasticsearchOperations elasticsearchTemplate() throws Exception {
         return new ElasticsearchTemplate(elasticsearchClient());
