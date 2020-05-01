@@ -5,6 +5,7 @@ import java.util.List;
 import org.Ged.dto.ClientDto;
 import org.Ged.orchestration.ClientServiceSilo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,9 +16,15 @@ public class ClientApi {
 	
 	@Autowired
 	private ClientServiceSilo clientServiceSilo;
+	
 	@GetMapping("/getAllClients")
 	public List<ClientDto> getAllClients() {
 		return clientServiceSilo.findAllClients();
+	}
+	
+	@GetMapping("/search")
+	public Page<ClientDto> search() {
+		return clientServiceSilo.search();
 	}
 
 }
