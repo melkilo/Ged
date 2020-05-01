@@ -19,23 +19,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
 @SpringBootApplication(scanBasePackages = "org.Ged.*")
 @EnableJpaRepositories(basePackages = "org.Ged.*")
 @EntityScan(basePackages = "org.Ged.*")
 
-
-public class GedStarter  implements CommandLineRunner  {
+public class GedStarter implements CommandLineRunner {
 
 	@Autowired(required = true)
 
-
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		SpringApplication.run(GedStarter.class, args);
 	}
 
 	public void run(String... args) throws Exception {
-	
+
 		System.out.print("<<< test after start  orxh");
 	}
 }

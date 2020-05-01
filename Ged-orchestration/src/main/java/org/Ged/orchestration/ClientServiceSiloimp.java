@@ -48,7 +48,7 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	public void deleteClient(Long id) {
 		clientService.deleteClient(id);
 	}
-	
+
 	@Override
 	public ClientDto updateClient(ClientDto c) {
 		Client clientDao = mapperService.map(c, Client.class);

@@ -15,6 +15,11 @@
 			<column name="nom" value="med" />
 			<column name="prenom" value="amine" />
 		</insert>
+		<insert tableName="client">
+			<column name="id" valueNumeric="3" />
+			<column name="nom" value="test" />
+			<column name="prenom" value="testprn" />
+		</insert>
 	</changeSet>
 
 	<!-- <changeSet author="melkilo" id="insert_client2_to_db" dbms="mysql,h2"> -->
