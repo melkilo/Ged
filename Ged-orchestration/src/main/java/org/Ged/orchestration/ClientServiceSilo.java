@@ -13,4 +13,8 @@ public interface ClientServiceSilo {
 	List<ClientDto> findAllClients();
 
 	Page<ClientDto> search();
+
+	void deleteClient(Long id);
+
+	ClientDto updateClient(ClientDto client);
 }

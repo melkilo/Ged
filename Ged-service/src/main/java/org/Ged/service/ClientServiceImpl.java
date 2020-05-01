@@ -17,14 +17,26 @@ public class ClientServiceImpl implements ClientService {
 
 	@Transactional
 	@Override
-	public Client saveOrUpdate(Client utilisateur) {
-		return utilisateurRepository.save(utilisateur);
+	public Client saveClient(Client client) {
+		return utilisateurRepository.save(client);
 	}
-	
+
 	@Transactional
 	@Override
 	public List<Client> getAllClients() {
 		return utilisateurRepository.findAll();
+	}
+
+	@Transactional
+	@Override
+	public void deleteClient(Long id) {
+		utilisateurRepository.deleteById(id);
+	}
+	
+	@Transactional
+	@Override
+	public Client updateClient(Client client) {
+		return utilisateurRepository.save(client);
 	}
 
 }

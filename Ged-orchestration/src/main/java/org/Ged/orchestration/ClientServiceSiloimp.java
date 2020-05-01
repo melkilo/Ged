@@ -26,9 +26,9 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 
 	@Override
 	public ClientDto saveClient(ClientDto c) {
-		Client clientt = mapperService.map(c, Client.class);
-		Client client = clientService.saveOrUpdate(clientt);
-		return clientSearchRepository.save(mapperService.map(client, ClientDto.class));
+		Client clientDao = mapperService.map(c, Client.class);
+		Client client = clientService.saveClient(clientDao);
+		return mapperService.map(client, ClientDto.class);
 	}
 
 	@Override
@@ -45,6 +45,15 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 
 		return clientSearchRepository.findAll(pageable);
 
+	public void deleteClient(Long id) {
+		clientService.deleteClient(id);
+	}
+	
+	@Override
+	public ClientDto updateClient(ClientDto c) {
+		Client clientDao = mapperService.map(c, Client.class);
+		Client client = clientService.updateClient(clientDao);
+		return mapperService.map(client, ClientDto.class);
 	}
 
 }
