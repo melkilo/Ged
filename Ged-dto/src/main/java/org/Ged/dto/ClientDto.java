@@ -1,12 +1,13 @@
 package org.Ged.dto;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
+@Document(indexName="ged",type="client")
 public class ClientDto {
 
 	public ClientDto() {
