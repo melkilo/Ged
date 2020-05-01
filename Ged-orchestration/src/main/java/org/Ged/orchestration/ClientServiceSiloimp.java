@@ -44,7 +44,7 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 		Pageable pageable  = PageRequest.of(0, 10);
 
 		return clientSearchRepository.findAll(pageable);
-
+	}
 	public void deleteClient(Long id) {
 		clientService.deleteClient(id);
 	}
