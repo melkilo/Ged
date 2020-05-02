@@ -17,27 +17,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiResponse;
 
 @RestController
 @RequestMapping(value = "/api/ged")
-@Api(description = "CRUD API Client")
+@Api(value = "CRUD API Client")
 public class ClientApi {
 
 	@Autowired
 	private ClientServiceSilo clientServiceSilo;
 
 	@GetMapping("/getAllClients")
-    @ApiOperation(value = "Get all clients from DB !")
-
+	@ApiOperation(value = "Gets List Of clients ", notes = "", response = ClientDto.class, responseContainer = "List")
 	public List<ClientDto> getAllClients() {
 		return clientServiceSilo.findAllClients();
 	}
 
-   
-
 	@GetMapping("/getClientById/{idClient}")
-	@ApiOperation(value = "Get client by id from DB !")
+	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
+			@ApiResponse(code = 404, message = "client not found"),
+			@ApiResponse(code = 200, message = "Successful operation", response = ClientDto.class) })
+	@ApiOperation(value = "Get client by id from DB ", notes = "Gives a client ID  ", response = ClientDto.class, responseContainer = "client")
+	@ApiImplicitParam(name = "clientId", value = "ID client", required = true, dataType = "long", paramType = "PathVariable")
 	public ClientDto getClientById(@PathVariable Long idClient) {
 		return clientServiceSilo.findClientById(idClient);
 	}
