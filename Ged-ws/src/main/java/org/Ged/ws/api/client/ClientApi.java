@@ -22,9 +22,15 @@ public class ClientApi {
 
 	@Autowired
 	private ClientServiceSilo clientServiceSilo;
+	
 	@GetMapping("/getAllClients")
 	public List<ClientDto> getAllClients() {
 		return clientServiceSilo.findAllClients();
+	}
+	
+	@GetMapping("/getClientById/{idClient}")
+	public ClientDto getClientById(@PathVariable Long idClient) {
+		return clientServiceSilo.findClientById(idClient);
 	}
 	
 	@GetMapping("/search")

@@ -3,6 +3,7 @@ package org.Ged.service;
 import org.Ged.model.Client;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.Ged.dao.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public List<Client> getAllClients() {
 		return utilisateurRepository.findAll();
+	}
+	
+	@Transactional
+	@Override
+	public Optional<Client> findClientById(Long idClient) {
+		return utilisateurRepository.findById(idClient);
 	}
 
 	@Transactional

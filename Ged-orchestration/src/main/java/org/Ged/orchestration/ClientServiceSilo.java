@@ -17,4 +17,6 @@ public interface ClientServiceSilo {
 	void deleteClient(Long id);
 
 	ClientDto updateClient(ClientDto client);
+
+	ClientDto findClientById(Long idClient);
 }

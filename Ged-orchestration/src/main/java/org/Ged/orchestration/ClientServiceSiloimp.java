@@ -1,6 +1,7 @@
 package org.Ged.orchestration;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.Ged.dao.search.ClientSearchRepository;
 import org.Ged.dto.ClientDto;
@@ -34,9 +35,13 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	@Override
 	public List<ClientDto> findAllClients() {
 		List<Client> client = clientService.getAllClients();
-		String t = "t";
-		t.toString();
 		return mapperService.mapList(client, ClientDto.class, MAPPING_CLIENT);
+	}
+	
+	@Override
+	public ClientDto findClientById(Long idClient) {
+		Optional<Client> client = clientService.findClientById(idClient);
+		return mapperService.map(client.get(), ClientDto.class);
 	}
 
 	@Override
