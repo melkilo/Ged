@@ -40,16 +40,16 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	
 	@Override
 	public ClientDto findClientById(Long idClient) {
-		Optional<Client> client = clientService.findClientById(idClient);
-		return mapperService.map(client.get(), ClientDto.class);
+		Client client = clientService.findClientById(idClient);
+		return mapperService.map(client, ClientDto.class);
 	}
 
 	@Override
 	public Page<ClientDto> search() {
 		Pageable pageable  = PageRequest.of(0, 10);
-
 		return clientSearchRepository.findAll(pageable);
 	}
+	
 	public void deleteClient(Long id) {
 		clientService.deleteClient(id);
 	}
