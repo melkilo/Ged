@@ -30,42 +30,32 @@ public class ClientApi {
 	@Autowired
 	private ClientServiceSilo clientServiceSilo;
 
+	@GetMapping("/search")
+	public Page<ClientDto> search() {
+		return clientServiceSilo.search();
+	}  
+	
 	@GetMapping("/getAllClients")
-	@ApiOperation(value = "Gets List Of clients ", notes = "", response = ClientDto.class, responseContainer = "List")
 	public List<ClientDto> getAllClients() {
 		return clientServiceSilo.findAllClients();
 	}
 
 	@GetMapping("/getClientById/{idClient}")
-	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
-			@ApiResponse(code = 404, message = "client not found"),
-			@ApiResponse(code = 200, message = "Successful operation", response = ClientDto.class) })
-	@ApiOperation(value = "Get client by id from DB ", notes = "Gives a client ID  ", response = ClientDto.class, responseContainer = "client")
-	@ApiImplicitParam(name = "clientId", value = "ID client", required = true, dataType = "long", paramType = "PathVariable")
 	public ClientDto getClientById(@PathVariable Long idClient) {
 		return clientServiceSilo.findClientById(idClient);
 	}
 
-	@GetMapping("/search")
-	@ApiOperation(value = "Get all clients from ES !")
-	public Page<ClientDto> search() {
-		return clientServiceSilo.search();
-	}
-
 	@PostMapping("/addClient")
-	@ApiOperation(value = "Add new client  !")
 	public ClientDto addClients(@RequestBody ClientDto client) {
 		return clientServiceSilo.saveClient(client);
 	}
 
 	@DeleteMapping("/deleteClient/{id}")
-	@ApiOperation(value = "Delete client !")
 	public void deleteClient(@PathVariable Long id) {
 		clientServiceSilo.deleteClient(id);
 	}
 
 	@PutMapping("/updateClient")
-	@ApiOperation(value = "Update client !")
 	public void updateClient(@RequestBody ClientDto client) {
 		clientServiceSilo.updateClient(client);
 	}

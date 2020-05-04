@@ -15,5 +15,5 @@ public interface ClientService {
 
 	Client updateClient(Client client);
 
-	Optional<Client> findClientById(Long idClient);
+	Client findClientById(Long idClient);
 }

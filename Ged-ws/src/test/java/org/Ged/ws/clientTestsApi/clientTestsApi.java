@@ -21,7 +21,6 @@ import org.junit.runners.MethodSorters;
 
 @SpringBootTest
 @ActiveProfiles("test")
-//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @TestMethodOrder(Alphanumeric.class)
 public class clientTestsApi {
 	@Autowired

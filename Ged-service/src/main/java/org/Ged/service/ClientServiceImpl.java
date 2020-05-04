@@ -1,6 +1,7 @@
 package org.Ged.service;
 
 import org.Ged.model.Client;
+import org.Ged.service.exception.clientException;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,36 +15,39 @@ import org.springframework.transaction.annotation.Transactional;
 public class ClientServiceImpl implements ClientService {
 
 	@Autowired
-	ClientRepository utilisateurRepository;
+	ClientRepository clientRepository;
 
 	@Transactional
 	@Override
 	public Client saveClient(Client client) {
-		return utilisateurRepository.save(client);
+		return clientRepository.save(client);
 	}
 
 	@Transactional
 	@Override
 	public List<Client> getAllClients() {
-		return utilisateurRepository.findAll();
-	}
-	
-	@Transactional
-	@Override
-	public Optional<Client> findClientById(Long idClient) {
-		return utilisateurRepository.findById(idClient);
+		return clientRepository.findAll();
 	}
 
 	@Transactional
 	@Override
-	public void deleteClient(Long id) {
-		utilisateurRepository.deleteById(id);
+	public Client findClientById(Long idClient) {
+		return clientRepository.findById(idClient)
+				.orElseThrow(() -> new clientException(clientException.clientExceptionEnum.CLIENT_ID_NOT_FOUND));
+	}
+
+	@Transactional
+	@Override
+	public void deleteClient(Long idClient) {
+		findClientById(idClient);
+		clientRepository.deleteById(idClient);
 	}
 
 	@Transactional
 	@Override
 	public Client updateClient(Client client) {
-		return utilisateurRepository.save(client);
+		findClientById(client.getId());
+		return clientRepository.save(client);
 	}
 
 }
