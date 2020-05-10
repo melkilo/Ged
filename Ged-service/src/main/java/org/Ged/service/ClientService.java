@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.Ged.model.Client;
+import org.springframework.data.domain.Page;
 
 public interface ClientService {
 

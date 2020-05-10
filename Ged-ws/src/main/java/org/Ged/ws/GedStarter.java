@@ -58,10 +58,10 @@ public class GedStarter implements CommandLineRunner {
 		ClientDto clientDto = mapper.map(client, ClientDto.class);
 		clientDto = clientServiceSilo.saveClient(clientDto);
 		System.out.println(clientDto.getNom() + " " + clientDto.getPrenom());
-		List<ClientDto> listClient = clientServiceSilo.findAllClients();
-		for (ClientDto clientDtoo : listClient) {
-			System.out.println(clientDtoo.getNom());
-		}
+	//	List<ClientDto> listClient = clientServiceSilo.findAllClients();
+//		for (ClientDto clientDtoo : listClient) {
+//			System.out.println(clientDtoo.getNom());
+//		}
 		System.out.print("<<< test after start  orxh");
 	}
 	
