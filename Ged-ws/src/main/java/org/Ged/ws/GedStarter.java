@@ -28,23 +28,23 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages = "org.Ged.*")
 @EnableJpaRepositories(basePackages = "org.Ged.*")
 @EntityScan(basePackages = "org.Ged.*")
-//@EnableAspectJAutoProxy
-@EnableAspectJAutoProxy(proxyTargetClass=true)
+// @EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 
 public class GedStarter implements CommandLineRunner {
 
 	@Autowired(required = true)
 	private ClientServiceSilo clientServiceSilo;
-	
-	@Autowired 
+
+	@Autowired
 	private ClientSearchRepository clientSearchRepository;
-	
+
 	@Autowired
 	private ClientRepository clientRepository;
-	
-	@Autowired 
+
+	@Autowired
 	private Mapper mapper;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(GedStarter.class, args);
 	}
@@ -52,28 +52,25 @@ public class GedStarter implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.print("<< test before start orch ");
-		//DozerBeanMapper mapper = new DozerBeanMapper();
-		//System.out.println(" <<<<<<<<<<<<  " + mapper.getMappingFiles());
+		// DozerBeanMapper mapper = new DozerBeanMapper();
+		// System.out.println(" <<<<<<<<<<<< " + mapper.getMappingFiles());
 		Client client = new Client("testAspect", "testAspect");
 		ClientDto clientDto = mapper.map(client, ClientDto.class);
 		clientDto = clientServiceSilo.saveClient(clientDto);
 		System.out.println(clientDto.getNom() + " " + clientDto.getPrenom());
-	//	List<ClientDto> listClient = clientServiceSilo.findAllClients();
-//		for (ClientDto clientDtoo : listClient) {
-//			System.out.println(clientDtoo.getNom());
-//		}
+		// List<ClientDto> listClient = clientServiceSilo.findAllClients();
+		// for (ClientDto clientDtoo : listClient) {
+		// System.out.println(clientDtoo.getNom());
+		// }
 		System.out.print("<<< test after start  orxh");
 	}
-	
-	
+
 	@Bean
 	@DependsOn("liquibase")
 	public void beanTest() {
 		System.out.println(" after lequibase ");
 		clientSearchRepository.deleteAll();
-		clientRepository.findAll().forEach(
-				client -> clientSearchRepository.save(mapper.map(client, ClientDto.class)));
-	
-		}
-	}
+		clientRepository.findAll().forEach(client -> clientSearchRepository.save(mapper.map(client, ClientDto.class)));
 
+	}
+}
