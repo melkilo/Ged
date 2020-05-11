@@ -46,7 +46,7 @@ public class clientTestsApi {
 	
 	@Test
 	public void c_deleteClientById() {
-		Long expectedId=3L;
+		Long expectedId=1L; 
 	    clientApi.deleteClient(expectedId);
 	    System.out.println("*************************deleeeeeeted");
 		//assertNotEquals(expectedId,clientApi.getClientById(expectedId).getId());		

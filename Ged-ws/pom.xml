@@ -76,25 +76,42 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-	</dependencies>
-	<profiles>
-		<profile>
-			<id>failsafe</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<testFailureIgnore>false</testFailureIgnore>
-							<includes>
-								<include>**/*TestsApi*</include>
-							</includes>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 
+	</dependencies>
+	<!-- <profiles> <profile> <id>failsafe</id> <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+		<configuration> <testFailureIgnore>false</testFailureIgnore> <includes> <include>**/*TestsApi*</include> </includes> </configuration> 
+		</plugin> </plugins> </build> </profile> </profiles> -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>default-test</id>
+							<phase>test</phase>
+							<goals>
+								<goal>test</goal>
+							</goals>
+							<configuration>
+								<argLine>-Dspring.profiles.active=test</argLine>
+								<driver>org.h2.Driver</driver>
+								<url>jdbc:h2:file:target/db/testdb</url>
+								<username>sa</username>
+								<password></password>
+								<autocommit>true</autocommit>
+								<testFailureIgnore>true</testFailureIgnore>
+								<forkCount>3</forkCount>
+								<reuseForks>true</reuseForks>
+								<includes>
+									<include>**/*TestsApi*</include>
+								</includes>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
