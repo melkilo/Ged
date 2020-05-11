@@ -23,11 +23,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ged</groupId>
-			<artifactId>Ged-orchestration</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ged</groupId>
 			<artifactId>Ged-dto</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

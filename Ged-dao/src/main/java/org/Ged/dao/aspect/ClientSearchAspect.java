@@ -2,7 +2,7 @@ package org.Ged.dao.aspect;
 
 import org.Ged.dao.search.ClientSearchRepository;
 import org.Ged.dto.ClientDto;
-import org.Ged.orchestration.mapper.service.MapperService;
+//import org.Ged.orchestration.mapper.service.MapperService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,8 +17,8 @@ public class ClientSearchAspect {
 	@Autowired
 	ClientSearchRepository clientSearchRepository;
 
-	@Autowired
-	MapperService mapperService;
+	//@Autowired
+//	MapperService mapperService;
 
 	@AfterReturning(pointcut = "execution(* org.Ged.orchestration.ClientServiceSiloimp.saveClient(..))", returning = "client")
 	public void saveClientTest(ClientDto client) {
