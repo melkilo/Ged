@@ -57,6 +57,6 @@ public class clientTestsApi {
 		List<ClientDto> result=clientApi.getAllClients();
 		result.forEach(clt -> System.out.println("after delete : "+clt.getNom()));
 		assertTrue(!result.isEmpty());
-	}
+	} 
 
 }
