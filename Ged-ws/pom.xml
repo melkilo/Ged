@@ -77,5 +77,24 @@
 			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>failsafe</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<testFailureIgnore>false</testFailureIgnore>
+							<includes>
+								<include>**/*TestsApi*</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>

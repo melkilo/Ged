@@ -7,7 +7,7 @@ import org.Ged.dao.search.ClientSearchRepository;
 import org.Ged.dto.ClientDto;
 import org.Ged.model.Client;
 import org.Ged.orchestration.ClientServiceSilo;
-import org.Ged.service.ClientService;
+//import org.Ged.service.ClientService;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
