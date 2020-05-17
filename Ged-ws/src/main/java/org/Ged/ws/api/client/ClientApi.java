@@ -3,6 +3,7 @@ package org.Ged.ws.api.client;
 import java.util.List;
 
 import org.Ged.dto.ClientDto;
+import org.Ged.dto.Pageable.ClientSearchPageableDto;
 import org.Ged.orchestration.ClientServiceSilo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,9 +33,14 @@ public class ClientApi {
 	@Autowired
 	private ClientServiceSilo clientServiceSilo;
 
-	@GetMapping("/search")
-	public Page<ClientDto> search() {
-		return clientServiceSilo.search();
+	@GetMapping("/getAll")
+	public Page<ClientDto> searchAll() {
+		return clientServiceSilo.searchAll();
+	}  
+	
+	@PostMapping("/search")
+	public Page<ClientDto> search(@RequestBody  ClientSearchPageableDto searchPageable) {
+		return clientServiceSilo.search(searchPageable);
 	}  
 	
 	@GetMapping("/getAllClients")

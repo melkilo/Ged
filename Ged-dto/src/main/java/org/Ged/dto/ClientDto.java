@@ -1,13 +1,14 @@
 package org.Ged.dto;
 
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Document(indexName="ged",type="client")
+@Document(indexName = "ged", type = "client")
 public class ClientDto {
 
 	public ClientDto() {
@@ -28,7 +29,9 @@ public class ClientDto {
 	}
 
 	private Long id;
+	@Field(type = FieldType.Text, fielddata = true)
 	private String nom;
+	@Field(type = FieldType.Text, fielddata = true)
 	private String prenom;
 
 	public Long getId() {

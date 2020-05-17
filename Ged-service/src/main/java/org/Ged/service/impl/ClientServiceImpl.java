@@ -1,6 +1,7 @@
-package org.Ged.service;
+package org.Ged.service.impl;
 
 import org.Ged.model.Client;
+import org.Ged.service.ClientService;
 import org.Ged.service.exception.clientException;
 
 import java.util.List;
@@ -49,5 +50,9 @@ public class ClientServiceImpl implements ClientService {
 		findClientById(client.getId());
 		return clientRepository.save(client);
 	}
+	
+	
+	
+	
 
 }

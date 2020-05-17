@@ -16,4 +16,6 @@ public interface ClientService {
 	Client updateClient(Client client);
 
 	Client findClientById(Long idClient);
+	
+	
 }
