@@ -118,10 +118,13 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 		switch (sortedBy) {
 
 		case "nom":
-			sortBuilder.add(SortBuilders.fieldSort("nom"));
+			sortBuilder.add(SortBuilders.fieldSort("nom").order(sortOrder));
 			break;
 		case "prenom":
-			sortBuilder.add(SortBuilders.fieldSort("prenom"));
+			sortBuilder.add(SortBuilders.fieldSort("prenom").order(sortOrder));
+			break;
+		case "id":
+			sortBuilder.add(SortBuilders.fieldSort("id").order(sortOrder));
 			break;
 
 		}

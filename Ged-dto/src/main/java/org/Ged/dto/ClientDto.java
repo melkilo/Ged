@@ -28,6 +28,7 @@ public class ClientDto {
 		this.prenom = prenom;
 	}
 
+	@Field(fielddata = true)
 	private Long id;
 	@Field(type = FieldType.Text, fielddata = true)
 	private String nom;
