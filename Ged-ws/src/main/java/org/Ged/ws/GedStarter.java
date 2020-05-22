@@ -54,7 +54,7 @@ public class GedStarter implements CommandLineRunner {
 		System.out.print("<< test before start orch ");
 		//DozerBeanMapper mapper = new DozerBeanMapper();
 		//System.out.println(" <<<<<<<<<<<<  " + mapper.getMappingFiles());
-		Client client = new Client("testAspect", "testAspect");
+		Client client = new Client("testAspect11", "testAspect11");      
 		ClientDto clientDto = mapper.map(client, ClientDto.class);
 		clientDto = clientServiceSilo.saveClient(clientDto);
 		System.out.println(clientDto.getNom() + " " + clientDto.getPrenom());
