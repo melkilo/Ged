@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet author="melkilo" id="createTableClient" dbms="mysql,h2">
+		<createTable tableName="client">
+			<!-- <preConditions onFail="MARK_RAN"> -->
+			<!-- <not> -->
+			<!-- <columnExists tableName="AGGR_C_INSTR" columnName="FI_DATA_CFIVALUE" /> -->
+			<!-- </not> -->
+			<!-- </preConditions> -->
+			<column autoIncrement="true" name="id" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="nom" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="prenom" type="VARCHAR(255)" />
+		</createTable>
+
+		<rollback>
+			<dropTable tableName="client" />
+		</rollback>
+	</changeSet>
+
+</databaseChangeLog>
