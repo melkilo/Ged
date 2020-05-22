@@ -17,14 +17,17 @@ import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.junit.runners.MethodSorters;
 
 @SpringBootTest
 @ActiveProfiles("test")
 @TestMethodOrder(Alphanumeric.class)
+
 public class clientTestsApi {
 	@Autowired
 	ClientApi clientApi;
