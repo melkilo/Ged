@@ -33,7 +33,7 @@ import org.springframework.stereotype.Service;
 import static org.elasticsearch.index.query.QueryBuilders.matchAllQuery;
 
 @Service
-public class ClientServiceSiloimp implements ClientServiceSilo {
+public class clientServiceSiloimp implements ClientServiceSilo {
 	@Autowired
 	ClientService clientService;
 	@Autowired
