@@ -42,6 +42,7 @@ public class clientServiceSiloimp implements ClientServiceSilo {
 	MapperService mapperService;
 
 	private static final String MAPPING_CLIENT = "MAPPING_CLIENT";
+	private static final String MAPPING_CLIENT2 = "MAPPING_CLIENT";
 
 	@Override
 	public ClientDto saveClient(ClientDto c) {
