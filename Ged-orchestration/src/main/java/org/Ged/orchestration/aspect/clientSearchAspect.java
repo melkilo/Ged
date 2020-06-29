@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 //@Slf4j
-public class ClientSearchAspect {
+public class clientSearchAspect {
 
 	@Autowired
 	ClientSearchRepository clientSearchRepository;
