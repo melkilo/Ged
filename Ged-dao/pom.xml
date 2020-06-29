@@ -7,6 +7,7 @@
 		<artifactId>demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
 	<groupId>com.ged</groupId>
 	<artifactId>Ged-dao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -56,20 +57,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.18</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>1.8.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.9</version>
-		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
