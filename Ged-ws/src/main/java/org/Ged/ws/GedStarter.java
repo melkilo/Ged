@@ -28,7 +28,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages = "org.Ged.*")
 @EnableJpaRepositories(basePackages = "org.Ged.*")
 @EntityScan(basePackages = "org.Ged.*")
-//@EnableAspectJAutoProxy
 @EnableAspectJAutoProxy(proxyTargetClass=true)
 
 public class GedStarter implements CommandLineRunner {
@@ -52,8 +51,6 @@ public class GedStarter implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.print("<< test before start orch ");
-		//DozerBeanMapper mapper = new DozerBeanMapper();
-		//System.out.println(" <<<<<<<<<<<<  " + mapper.getMappingFiles());
 		Client client = new Client("testAspect112", "testAspect112");      
 		ClientDto clientDto = mapper.map(client, ClientDto.class);
 		clientDto = clientServiceSilo.saveClient(clientDto);
