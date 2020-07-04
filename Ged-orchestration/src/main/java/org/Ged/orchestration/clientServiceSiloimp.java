@@ -33,7 +33,7 @@ import org.springframework.stereotype.Service;
 import static org.elasticsearch.index.query.QueryBuilders.matchAllQuery;
 
 @Service
-public class ClientServiceSiloimp implements ClientServiceSilo {
+public class clientServiceSiloimp implements ClientServiceSilo {
 	@Autowired
 	ClientService clientService;
 	@Autowired
@@ -42,6 +42,7 @@ public class ClientServiceSiloimp implements ClientServiceSilo {
 	MapperService mapperService;
 
 	private static final String MAPPING_CLIENT = "MAPPING_CLIENT";
+	private static final String MAPPING_CLIENT2 = "MAPPING_CLIENT";
 
 	@Override
 	public ClientDto saveClient(ClientDto c) {
